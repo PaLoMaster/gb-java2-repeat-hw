@@ -16,15 +16,10 @@ public abstract class Animal implements Competitor {
     }
 
     private <T extends Comparable<T>> void executor(T executionLimit, T executionRate, String executionDescriptor) {
-        String pattern = "%s named as \"%s\", can %5$s %s, must %s, %s: %b\n";
-        if (executionLimit.compareTo(executionRate) >= 0) {
-            System.out.printf(pattern, getClass().getSimpleName(), name, executionLimit, executionRate,
-                    executionDescriptor, true);
-        } else {
-            System.out.printf(pattern, getClass().getSimpleName(), name, executionLimit, executionRate,
-                    executionDescriptor, false);
-            onDistance = false;
-        }
+        String pattern = "%s named as \"%s\", can %s %s, must %s,%s completed\n";
+        onDistance = executionLimit.compareTo(executionRate) >= 0;
+        System.out.printf(pattern, getClass().getSimpleName(), name, executionDescriptor, executionLimit,
+                executionRate, (onDistance ? "" : " not"));
     }
 
     @Override
