@@ -20,8 +20,6 @@ public class ChatController implements Initializable {
     TextArea history;
     @FXML
     TextField message;
-    @FXML
-    Button sendButton;
     PrintStream toServerOut;
 
     @FXML

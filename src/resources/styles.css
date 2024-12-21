@@ -7,3 +7,6 @@
 .text-field {
     -fx-font: bold 16 Arial;
 }
+.password-field {
+    -fx-font: bold 16 Arial;
+}

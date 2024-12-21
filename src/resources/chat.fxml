@@ -6,10 +6,16 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.TextField?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="ru.khusyainov.gb.java2.hw6.client.javafx.ChatController">
+<?import javafx.scene.control.PasswordField?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="ru.khusyainov.gb.java2.hw7.client.javafx.ChatController">
+    <HBox fx:id="loginPanel">
+        <TextField fx:id="loginField" promptText="Введите логин" HBox.hgrow="ALWAYS"/>
+        <PasswordField fx:id="passwordField" promptText="Введите пароль" onAction="#login" HBox.hgrow="ALWAYS"/>
+        <Button text="Отправить" onAction="#login"/>
+    </HBox>
     <TextArea fx:id="history" editable="false" VBox.vgrow="ALWAYS" wrapText="true"/>
-    <HBox>
+    <HBox fx:id="messagePanel" managed="false">
         <TextField fx:id="message" promptText="Введите сообщение" onAction="#sendMessage" HBox.hgrow="ALWAYS"/>
-        <Button fx:id="sendButton" text="Отправить" onAction="#sendMessage"/>
+        <Button text="Отправить" onAction="#sendMessage"/>
     </HBox>
 </VBox>
