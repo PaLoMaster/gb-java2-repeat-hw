@@ -10,3 +10,6 @@
 .password-field {
     -fx-font: bold 16 Arial;
 }
+.list-cell {
+    -fx-font: bold 16 Arial;
+}

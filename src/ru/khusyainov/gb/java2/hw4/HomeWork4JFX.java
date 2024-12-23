@@ -13,8 +13,6 @@ public class HomeWork4JFX extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("chat.fxml")));
-        root.getStylesheets().add(Objects.requireNonNull(
-                getClass().getClassLoader().getResource("styles.css")).toExternalForm());
         stage.setTitle("Чат");
         Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
         float windowRatio = 0.6f;
